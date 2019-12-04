@@ -1,0 +1,10 @@
+.header {
+    width: calc(100% - var(--size-nav));
+    height: var(--size-header);
+
+    position: absolute;
+    top: 0;
+    left: var(--size-nav);
+
+    background-color: var(--color-80);
+}

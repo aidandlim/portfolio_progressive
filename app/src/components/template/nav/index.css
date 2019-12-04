@@ -1,0 +1,10 @@
+.nav {
+    width: var(--size-nav);
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--color-100);
+}

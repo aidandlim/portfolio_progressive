@@ -1,0 +1,13 @@
+.body {
+    width: calc(100% - var(--size-nav));
+    height: calc(100% - var(--size-header));
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    position: absolute;
+    top: var(--size-header);
+    left: var(--size-nav);
+
+    background-color: var(--color-30);
+}
