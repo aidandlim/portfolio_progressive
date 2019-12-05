@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Nav from '../nav';
+import Sidebar from '../sidebar';
 import Header from '../header';
 import Body from '../body';
 
@@ -31,7 +31,7 @@ const App = () => {
 					--color-10: ${color + '1a'};
 				}
 			`}</style>
-			<Nav />
+			<Sidebar />
 			<Header />
 			<Body />
 		</Wrapper>

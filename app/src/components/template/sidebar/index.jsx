@@ -5,7 +5,7 @@ import User from '../../unit/user';
 
 import './index.css';
 
-const Nav = () => {
+const Sidebar = () => {
 	return (
 		<div className='nav'>
 			<CI />
@@ -14,4 +14,4 @@ const Nav = () => {
 	);
 }
 
-export default Nav;
+export default Sidebar;

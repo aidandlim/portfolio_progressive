@@ -1,12 +1,39 @@
 .ci {
-    width: 100%;
+    width: auto;
     height: 3rem;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.ci-title {
+    width: auto;
+    height: 3rem;
+
+    margin-right: 0.35rem;
 
     position: relative;
     float: left;
 
     color: white;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    font-style: italic;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.ci-auth {
+    width: auto;
+    height: 3rem;
+
+    position: relative;
+    float: left;
+
+    color: #B0B0B0;
+    font-size: 0.5rem;
     font-weight: 900;
     font-style: italic;
     text-align: center;
