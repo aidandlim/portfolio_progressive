@@ -8,3 +8,46 @@
 
     background-color: var(--color-100);
 }
+
+.nav-new-container {
+    width: auto;
+    height: 2rem;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    background-color: #c0c0c0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 2.5rem;
+
+    opacity: 0.75;
+}
+
+.nav-new-icon {
+    width: 1rem;
+    height: 1rem;
+
+    margin: 0.5rem;
+
+    position: relative;
+    float: left;
+
+    color: var(--color-70);
+}
+
+.nav-new-title {
+    width: auto;
+    height: 100%;
+
+    padding: 0 1rem 0 0;
+
+    position: relative;
+    float: left;
+
+    color: var(--color-70);
+    font-size: 0.6rem;
+    font-weight: 900;
+    line-height: 1.9rem;
+}

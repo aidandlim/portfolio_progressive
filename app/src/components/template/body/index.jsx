@@ -14,9 +14,9 @@ import './index.css';
 const Body = () => {
 	return (
 		<div className='body'>
+			<New />
 			<Switch>
 				<Route path='/' exact component={All} />
-				<Route path='/new' exact component={New} />
 				<Route path='/ongoing' exact component={Ongoing} />
 				<Route path='/complete' exact component={Complete} />
 				<Route path='/setting' exact component={Setting} />

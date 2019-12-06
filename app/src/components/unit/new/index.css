@@ -1,0 +1,9 @@
+.new {
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    float: left;
+
+    display: none;
+}
