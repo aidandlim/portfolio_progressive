@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import Menu from '../../unit/menu';
-import Searchbar from '../../unit/searchbar';
+import Search from '../../unit/search';
 
+import { FiSettings } from 'react-icons/fi';
 import './index.css';
 
 const Header = () => {
-	const [nav, setNav] = useState(0);
+	const [nav, setNav] = useState(-1);
 	const menus = [{
 			title: '전체 프로젝트',
 			route: '/'
@@ -23,6 +24,21 @@ const Header = () => {
 		}
 	];
 
+	useEffect(() => {
+		const currentLocation = window.location.pathname;
+
+		if(currentLocation === '/')
+			setNav(0);
+		else if(currentLocation === '/ongoing')
+			setNav(1);
+		else if(currentLocation === '/complete')
+			setNav(2);
+		else if(currentLocation === '/setting')
+			setNav(9);
+		else
+			setNav(-1);
+	}, []);
+
 	const _handleNav = (index) => {
 		setNav(index);
 	}
@@ -34,7 +50,10 @@ const Header = () => {
 					<Menu index={index} nav={nav} title={menu.title} />
 				</Link>
 			)}
-			<Searchbar />
+			<Link to='/setting'>
+				<FiSettings className={nav === 9 ? 'header-setting-active' : 'header-setting'} onClick={() => _handleNav(9)} />
+			</Link>
+			<Search />
 		</div>
 	);
 }

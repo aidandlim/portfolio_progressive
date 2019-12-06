@@ -1,8 +1,8 @@
-.searchbar {
+.search {
     width: 7.5rem;
-    height: calc(var(--size-header) - 1.6rem);
+    height: calc(var(--size-header) - 1.5rem);
 
-    margin: 0.5rem 0.5rem 0 0;
+    margin: 0.5rem 0 0 0;
     padding: 0.25rem 0.5rem;
 
     position: relative;
@@ -11,12 +11,17 @@
     color: #C0C0C0;
     font-size: 0.5rem;
     font-weight: 900;
-    line-height: calc(var(--size-header) - 1.55rem);
+    line-height: calc(var(--size-header) - 1.5rem);
     
     background: var(--color-30);
-    border: solid 0.05rem var(--color-50);
+    border: none;
     border-radius: 0.5rem;
 
     cursor: pointer;
     outline: none;
+}
+
+.search:focus {
+    color: #303030;
+    background-color: #909090;
 }

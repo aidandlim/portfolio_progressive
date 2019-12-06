@@ -1,4 +1,5 @@
-.menu {
+.menu,
+.menu-active {
     width: auto;
     height: calc(var(--size-header) - 1.6rem);
 
@@ -20,22 +21,6 @@
 }
 
 .menu-active {
-    width: auto;
-    height: calc(var(--size-header) - 1.5rem);
-
-    margin: 0.5rem 0 0 0.5rem;
-    padding: 0.25rem;
-
-    position: relative;
-    float: left;
-
     color: #303030;
-    font-size: 0.5rem;
-    font-weight: 900;
-    line-height: calc(var(--size-header) - 1.5rem);
-    
     background-color: #909090;
-    border-radius: 0.5rem;
-
-    cursor: pointer;
 }
