@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+
 @media (max-width:360px){html{font-size:10px;}}
 @media (min-width:361px) and (max-width:399px){html{font-size:11px;}}
 @media (min-width:400px) and (max-width:439px){html{font-size:12px;}}
@@ -23,7 +25,7 @@ body {
 
     overflow: hidden;
 
-    font-family: sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .no-drag {
@@ -49,21 +51,21 @@ textarea  {
 }
 
 ::-webkit-scrollbar:vertical {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar:horizontal {
-    height: 15px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #272727;
+    background: #95a5a6;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #474747;
+    background: #7f8c8d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555555;
+    background: #7f8c8d;
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 import './index.css';
 
-const Menu = ({title}) => {
+const Menu = ({index, nav, title}) => {
 	return (
-		<div className='menu'>
+		<div className={nav === index ? 'menu-active' : 'menu'}>
             {title}
 		</div>
 	);

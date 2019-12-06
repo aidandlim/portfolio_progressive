@@ -2,11 +2,11 @@
     width: 7.5rem;
     height: calc(var(--size-header) - 1.6rem);
 
-    margin: 0.5rem 0 0 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
     padding: 0.25rem 0.5rem;
 
     position: relative;
-    float: left;
+    float: right;
 
     color: #C0C0C0;
     font-size: 0.5rem;
