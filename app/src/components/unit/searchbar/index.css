@@ -1,20 +1,22 @@
-.menu {
-    width: auto;
+.searchbar {
+    width: 7.5rem;
     height: calc(var(--size-header) - 1.6rem);
 
     margin: 0.5rem 0 0 0.5rem;
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
 
     position: relative;
     float: left;
 
-    color: #909090;
+    color: #C0C0C0;
     font-size: 0.5rem;
     font-weight: 900;
     line-height: calc(var(--size-header) - 1.55rem);
     
-    border: solid 0.05rem #909090;
+    background: var(--color-30);
+    border: solid 0.05rem var(--color-50);
     border-radius: 0.5rem;
 
     cursor: pointer;
+    outline: none;
 }
