@@ -8,7 +8,13 @@ const New = () => {
 	}
 
 	return (
-		<div className='new' onClick={ () => _handleNewProject() }>new</div>
+		<div className='new' onClick={ () => _handleNewProject() }>
+			<div className='body-title-primary'>
+				신규 프로젝트 생성
+				<div className='body-exit'>닫기</div>
+			</div>
+			<div className='body-body'>Content will be here.</div>
+		</div>
 	);
 }
 
