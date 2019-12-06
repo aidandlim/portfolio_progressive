@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
+import New from '../../unit/new';
 import All from '../../unit/all';
 import Ongoing from '../../unit/ongoing';
 import Complete from '../../unit/complete';
@@ -15,6 +16,7 @@ const Body = () => {
 		<div className='body'>
 			<Switch>
 				<Route path='/' exact component={All} />
+				<Route path='/new' exact component={New} />
 				<Route path='/ongoing' exact component={Ongoing} />
 				<Route path='/complete' exact component={Complete} />
 				<Route path='/setting' exact component={Setting} />

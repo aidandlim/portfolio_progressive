@@ -1,5 +1,5 @@
 const user = {
-    auth: 0,
+    auth: 1,
     // 0 : user
     // 1 : manager
     // 2 : admin
