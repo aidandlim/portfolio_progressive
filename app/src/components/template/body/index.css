@@ -14,51 +14,83 @@
     background-color: var(--color-30);
 }
 
-.body-title,
-.body-title-primary {
+.body-header {
     width: calc(100% - 1rem);
-    height: auto;
+    height: 1rem;
 
     margin-bottom: 0.5rem;
-    padding: 0.25rem 0.5rem;
 
     position: relative;
     float: left;
 
-    color: #D0D0D0;
-    font-size: 0.65rem;
+    color: #404040;
+    font-size: 0.55rem;
     font-weight: 900;
-
-    background-color: var(--color-50);
-    border-radius: 0.5rem;
 }
 
-.body-title-primary {
-    background-color: #2980b9;
-}
-
-.body-exit {
-    width: 1.5rem;
-    height: auto;
-
-    padding: 0.15rem;
+.body-format {
+    width: 6rem;
+    height: 100%;
 
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 100%;
-    transform: translate(calc(-100% - 0.25rem), -50%);
+    transform: translate(-100%, 0);
+}
 
-    color: #404040;
+.body-format-description {
+    width: 3.5rem;
+    height: 100%;
+
+    margin-right: 0.5rem;
+
+    position: relative;
+    float: left;
+
+    color: #606060;
     font-size: 0.5rem;
-    font-weight: 900;
-    text-align: center;
+    font-weight: 700;
+    text-align: right;
+    line-height: 1rem;
+}
 
-    background-color: #C0C0C0;
-    border-radius: 0.35rem;
+.body-format-toggle-box,
+.body-format-toggle-box-active {
+    width: 2rem;
+    height: 100%;
+
+    position: relative;
+    float: left;
+
+    background-color: var(--color-20);
+    border-radius: 1rem;
+}
+
+.body-format-toggle-box-active {
+    background-color: #fff;
+}
+
+.body-format-toggle-button,
+.body-format-toggle-button-active {
+    width: 1rem;
+    height: 1rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--color-50);
+    border-radius: 50%;
+
+    transition: 0.5s;
+}
+
+.body-format-toggle-button-active {
+    left: 50%;
 }
 
 .body-body {
-    width: calc(100% - 1rem);
+    width: 100%;
     height: auto;
 
     margin-bottom: 1rem;
@@ -67,6 +99,6 @@
     position: relative;
     float: left;
 
-    background-color: var(--color-10);
-    border-radius: 0.5rem;
+    border: solid 0.05rem var(--color-20);
+    box-sizing: border-box;
 }
