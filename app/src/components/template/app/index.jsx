@@ -11,7 +11,7 @@ import Wrapper from 'react-div-100vh';
 import './index.css';
 
 const App = () => {
-	const color = '#2c3e50';
+	const color = '#01579B';
 	const sizeOfNav = '12.5rem';
 	const sizeOfHeader = '2.5rem';
 
