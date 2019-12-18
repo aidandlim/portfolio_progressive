@@ -20,7 +20,7 @@
     position: relative;
     float: right;
 
-    color: #C0C0C0;
+    color: white;
     
     background: var(--color-30);
     border-radius: 50%;
@@ -30,6 +30,5 @@
 }
 
 .header-setting-active {
-    color: #303030;
     background-color: #909090;
 }

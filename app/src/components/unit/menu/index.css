@@ -1,7 +1,7 @@
 .menu,
 .menu-active {
     width: auto;
-    height: calc(var(--size-header) - 1.6rem);
+    height: calc(var(--size-header) - 1rem);
 
     margin: 0.5rem 0 0 0.5rem;
     padding: 0.25rem;
@@ -9,18 +9,20 @@
     position: relative;
     float: left;
 
-    color: #909090;
+    color: white;
     font-size: 0.5rem;
     font-weight: 900;
-    line-height: calc(var(--size-header) - 1.55rem);
+    line-height: calc(var(--size-header) - 1.65rem);
     
-    border: solid 0.05rem #909090;
+    border: solid 0.1rem white;
     border-radius: 0.5rem;
+    box-sizing: border-box;
+
+    opacity: 0.5;
 
     cursor: pointer;
 }
 
 .menu-active {
-    color: #303030;
-    background-color: #909090;
+    opacity: 1;
 }
