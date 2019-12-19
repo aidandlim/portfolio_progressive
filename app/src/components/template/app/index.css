@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+::placeholder {
+    color: white;
+}
+
 body.react-confirm-alert-body-element {
     overflow: hidden;
 }

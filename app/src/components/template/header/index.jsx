@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import Menu from '../../unit/menu';
+import Mode from '../../unit/mode';
 import Search from '../../unit/search';
 
 import { FiSettings } from 'react-icons/fi';
@@ -55,6 +56,7 @@ const Header = () => {
 				<FiSettings className={nav === 9 ? 'header-setting-active' : 'header-setting'} />
 			</Link>
 			<Search />
+			<Mode />
 		</div>
 	);
 }

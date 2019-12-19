@@ -30,10 +30,12 @@
     position: relative;
     float: left;
 
-    color: #B0B0B0;
+    color: white;
     font-size: 0.6rem;
     font-weight: 700;
     text-align: center;
+
+    opacity: 0.75;
 }
 
 .user-department {
@@ -45,10 +47,12 @@
     position: relative;
     float: left;
 
-    color: #808080;
+    color: white;
     font-size: 0.5rem;
     font-weight: 500;
     text-align: center;
+
+    opacity: 0.5;
 }
 
 .user-title {
@@ -72,7 +76,7 @@
     position: relative;
     float: left;
 
-    color: #E0E0E0;
+    color: white;
     font-size: 0.6rem;
     font-weight: 900;
     text-align: center;
@@ -85,8 +89,10 @@
     position: relative;
     float: left;
 
-    color: #E0E0E0;
+    color: white;
     font-size: 0.6rem;
     font-weight: 900;
     text-align: center;
+
+    opacity: 0.9;
 }

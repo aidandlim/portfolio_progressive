@@ -25,10 +25,12 @@
     background: var(--color-30);
     border-radius: 50%;
 
+    opacity: 0.5;
+
     cursor: pointer;
     outline: none;
 }
 
 .header-setting-active {
-    background-color: #909090;
+    opacity: 1;
 }

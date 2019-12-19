@@ -11,7 +11,7 @@
 
     color: white;
     font-size: 0.5rem;
-    font-weight: 900;
+    font-weight: 500;
     line-height: calc(var(--size-header) - 1.65rem);
     
     border: solid 0.1rem white;
@@ -24,5 +24,6 @@
 }
 
 .menu-active {
+    font-weight: 900;
     opacity: 1;
 }
