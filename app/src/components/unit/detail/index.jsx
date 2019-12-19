@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import queryString from 'query-string';
 
+import ProjectPull from '../../pull/project';
+
 import './index.css';
 
 const Detail = ({ location }) => {
@@ -9,12 +11,14 @@ const Detail = ({ location }) => {
 
 	useEffect(() => {
 		const { id } = queryString.parse(location.search);
-		console.log(id);
+		setProjectDetail(ProjectPull(id));
 	}, [location.search]);
 
 	return (
 		<div className='detail'>
-			detail
+			{projectDetail.id}
+			{projectDetail.code}
+			{projectDetail.name}
 		</div>
 	);
 }
