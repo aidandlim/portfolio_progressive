@@ -1,16 +1,21 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import Wrapper from 'react-div-100vh';
+
+import Landing from '../landing';
 import Sidebar from '../sidebar';
 import Header from '../header';
 import Body from '../body';
 
-import Wrapper from 'react-div-100vh';
-
 import './index.css';
 
 const App = () => {
+	const user = useSelector(state => state.user);
+
 	const color = '#01579B';
 	const sizeOfNav = '12.5rem';
 	const sizeOfHeader = '2.5rem';
@@ -34,9 +39,10 @@ const App = () => {
 						--color-10: ${color + '1a'};
 					}
 				`}</style>
-				<Sidebar />
-				<Header />
-				<Body />
+				{ user.data.id === undefined ? <Landing /> : null }
+				{ user.data.id !== undefined ? <Sidebar /> : null }
+				{ user.data.id !== undefined ? <Header /> : null }
+				{ user.data.id !== undefined ? <Body /> : null }
 			</Wrapper>
 		</Router>
 	);

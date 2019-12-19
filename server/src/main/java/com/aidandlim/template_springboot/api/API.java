@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ExampleAPI {
+public class API {
 
     @Autowired
     ExampleService service;
 
-    @RequestMapping("/api/auth/isLogin")
+    @RequestMapping("/api/")
     public boolean example() { return (service.example()); }
 
 }

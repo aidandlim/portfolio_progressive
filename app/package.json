@@ -1,6 +1,6 @@
 {
   "name": "progressive",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "proxy": "https://localhost:8443/api",
   "dependencies": {

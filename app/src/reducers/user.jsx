@@ -3,12 +3,14 @@ const user = {
     // 0 : user
     // 1 : manager
     // 2 : admin
-    data: {
-        company: '에스엠컨설팅그룹',
-        department: '솔루션개발사업부',
-        position: '팀장',
-        name: '임동섭',
-    }
+    // data: {
+    //     id: 0,
+    //     company: '에스엠컨설팅그룹',
+    //     department: '솔루션개발사업부',
+    //     position: '팀장',
+    //     name: '임동섭',
+    // },
+    data: {}
 }
 
 const userReducer = (state = user, action) => {
