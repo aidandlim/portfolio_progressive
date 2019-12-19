@@ -1,5 +1,12 @@
 /****************************************************/
 
+export const ui_nav = (value) => {
+    return {
+        type: 'UI_NAV',
+        payload: value
+    };
+};
+
 export const ui_isCardMode = (value) => {
     return {
         type: 'UI_ISCARDMODE',

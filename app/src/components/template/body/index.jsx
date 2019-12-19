@@ -7,7 +7,8 @@ import Ongoing from '../../unit/ongoing';
 import Complete from '../../unit/complete';
 import Setting from '../../unit/setting';
 
-import New from '../../unit/new';
+import Project from '../../unit/project';
+import Progress from '../../unit/progress';
 import Detail from '../../unit/detail';
 
 import Error from '../../unit/error';
@@ -22,7 +23,8 @@ const Body = () => {
 				<Route path='/ongoing' exact component={Ongoing} />
 				<Route path='/complete' exact component={Complete} />
 				<Route path='/setting' exact component={Setting} />
-				<Route path='/new' exact component={New} />
+				<Route path='/project' exact component={Project} />
+				<Route path='/progress' exact component={Progress} />
 				<Route path='/detail' exact component={Detail} />
 				<Route path='/' component={Error} />
 			</Switch>

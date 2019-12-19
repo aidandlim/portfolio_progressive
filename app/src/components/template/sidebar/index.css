@@ -1,4 +1,4 @@
-.nav {
+.sidebar {
     width: var(--size-nav);
     height: 100%;
 
@@ -9,9 +9,11 @@
     background-color: var(--color-100);
 }
 
-.nav-new-container {
+.sidebar-container {
     width: auto;
     height: 2rem;
+
+    margin-bottom: 1rem;
 
     position: relative;
     float: left;
@@ -27,7 +29,7 @@
     cursor: pointer;
 }
 
-.nav-new-icon {
+.sidebar-icon {
     width: 1rem;
     height: 1rem;
 
@@ -39,7 +41,7 @@
     color: var(--color-70);
 }
 
-.nav-new-title {
+.sidebar-title {
     width: auto;
     height: 100%;
 

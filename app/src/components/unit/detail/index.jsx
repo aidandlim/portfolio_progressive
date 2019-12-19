@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import queryString from 'query-string';
 
-import ProjectPull from '../../pull/project';
+import { Project as ProjectPull } from '../../pull';
 
 import './index.css';
 
@@ -19,8 +19,6 @@ const Detail = ({ location }) => {
 	return (
 		<div className='detail'>
 			{projectDetail.id}
-			{projectDetail.code}
-			{projectDetail.name}
 		</div>
 	);
 }

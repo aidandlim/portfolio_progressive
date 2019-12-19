@@ -1,6 +1,6 @@
 // import Axios from 'axios';
 
-const project = ({ id }) => {
+export const Project = (id) => {
     /*
     const data = {
         id
@@ -18,5 +18,3 @@ const project = ({ id }) => {
         name: 'Test Project'
     };
 }
-
-export default project;
