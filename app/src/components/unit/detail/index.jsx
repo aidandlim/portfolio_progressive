@@ -10,8 +10,10 @@ const Detail = ({ location }) => {
 	const [ projectDetail, setProjectDetail ] = useState({});
 
 	useEffect(() => {
-		const { id } = queryString.parse(location.search);
-		setProjectDetail(ProjectPull(id));
+		const { p } = queryString.parse(location.search);
+		
+		if (p !== undefined)
+			setProjectDetail(ProjectPull(p));
 	}, [location.search]);
 
 	return (
