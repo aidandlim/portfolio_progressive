@@ -1,4 +1,4 @@
-package com.aidandlim.template_springboot.config;
+package com.aidandlim.progressive.config;
 
 import org.springframework.stereotype.Component;
 

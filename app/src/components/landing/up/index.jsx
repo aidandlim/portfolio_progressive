@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { Companies } from '../../pull';
 
 const Up = () => {
+    const [ companies, setCompanies ] = useState([]);
+    
+    useEffect(() => {
+        setCompanies(Companies());
+    }, []);
+
+    console.log(companies);
+
     return (
         <form className='landing-form' name='signup'>
             <p>이메일</p>

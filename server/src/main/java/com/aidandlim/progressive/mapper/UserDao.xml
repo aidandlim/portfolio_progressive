@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aidandlim.progressive.dao.UserDao">
+
+    <select id="select" resultType="com.aidandlim.progressive.dto.User">
+        SELECT
+            `id`,
+            `email`,
+            `name`,
+            `company`,
+            `department`,
+            `position`
+        FROM
+            `users`
+        WHERE
+            `id` = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.aidandlim.progressive.dto.User">
+        SELECT
+            `id`,
+            `email`,
+            `name`,
+            `company`,
+            `department`,
+            `position`
+        FROM
+            `users`
+        WHERE
+            `company` = #{id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO `users`
+            (`email`, `password`, `name`, `company`, `department`, `position`)
+        VALUES
+            (#{email}, #{password}, #{name}, #{company}, #{department}, #{position})
+    </insert>
+
+    <update id="update">
+        UPDATE
+            `users`
+        SET
+            `email` = #{email},
+            `password` = #{password},
+            `name` = #{name},
+            `department` = #{department},
+            `position` = #{position}
+        WHERE
+            `id` = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM
+            `uses`
+        WHERE
+            `id` = #{id}
+    </delete>
+
+</mapper>

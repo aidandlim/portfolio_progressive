@@ -1,4 +1,11 @@
-// import Axios from 'axios';
+import Axios from 'axios';
+
+export const Companies = () => {
+    Axios.get('/companies')
+    .then((res) => {
+        return res.data;
+    });
+}
 
 export const Project = (id) => {
     /*

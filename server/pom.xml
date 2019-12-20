@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.aidandlim</groupId>
-    <artifactId>template_springboot</artifactId>
+    <artifactId>progressive</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>title</name>
-    <description>description</description>
+    <name>progressive</name>
+    <description>progressive</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

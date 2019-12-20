@@ -1,13 +1,13 @@
-package com.aidandlim.template_springboot;
+package com.aidandlim.progressive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TemplateSpringbootApplication {
+public class SpringbootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TemplateSpringbootApplication.class, args);
+        SpringApplication.run(SpringbootApplication.class, args);
     }
 
 }

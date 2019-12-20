@@ -1,4 +1,4 @@
-package com.aidandlim.template_springboot.config;
+package com.aidandlim.progressive.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages="com.aidandlim.template_springboot.dao")
+@MapperScan(basePackages="com.aidandlim.progressive.dao")
 @EnableTransactionManagement
 public class DatabaseConfig {
 
@@ -21,7 +21,7 @@ public class DatabaseConfig {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("classpath:com/aidandlim/template_springboot/mapper/*.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("classpath:com/aidandlim/progressive/mapper/*.xml"));
         return sessionFactory.getObject();
     }
 
