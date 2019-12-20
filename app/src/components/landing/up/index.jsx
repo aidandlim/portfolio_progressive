@@ -1,28 +1,42 @@
 import React, { useState, useEffect } from 'react';
 
 import { Companies } from '../../pull';
+import { Up as UpPush } from '../../push';
 
 const Up = () => {
     const [ companies, setCompanies ] = useState([]);
     
     useEffect(() => {
-        setCompanies(Companies());
+        Companies((res) => {
+            setCompanies(res);
+        });
     }, []);
 
-    console.log(companies);
+    const _handleForm = (event) => {
+        event.preventDefault();
+
+        UpPush((res) => {
+            console.log(res);
+        });
+    }
 
     return (
-        <form className='landing-form' name='signup'>
+        <form className='landing-form' name='signup' onSubmit={_handleForm}>
             <p>이메일</p>
-            <input type='email' name='email' autoComplete='off' />
+            <input type='email' name='email' autoComplete='off' required/>
             <p>비밀번호</p>
-            <input type='password' name='password' autoComplete='off' />
+            <input type='password' name='password' autoComplete='off' required/>
             <p>비밀번호 확인</p>
-            <input type='password' name='confirm' autoComplete='off' />
+            <input type='password' name='confirm' autoComplete='off' required/>
             <p>성명</p>
-            <input type='text' name='name' autoComplete='off' />
+            <input type='text' name='name' autoComplete='off' required/>
             <p>회사명</p>
-            <input type='text' name='company' autoComplete='off' />
+            <select name='company'>
+                <option value='-1'>선택</option>
+                {companies.map((company, index) => 
+                    <option key={index} value={company.id}>{company.name}</option>    
+                )}
+            </select>
             <p>부서명</p>
             <input type='text' name='department' autoComplete='off' />
             <p>직책</p>

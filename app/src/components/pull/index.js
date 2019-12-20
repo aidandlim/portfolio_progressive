@@ -1,9 +1,9 @@
 import Axios from 'axios';
 
-export const Companies = () => {
+export const Companies = (callback) => {
     Axios.get('/companies')
     .then((res) => {
-        return res.data;
+        callback(res.data);
     });
 }
 

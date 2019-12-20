@@ -7,6 +7,10 @@ public class Response {
     public Response() {
     }
 
+    public Response(int status) {
+        this.status = status;
+    }
+
     public Response(int status, String message) {
         this.status = status;
         this.message = message;
