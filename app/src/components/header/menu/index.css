@@ -1,0 +1,29 @@
+.menu,
+.menu-active {
+    width: auto;
+    height: calc(var(--size-header) - 1rem);
+
+    margin: 0.5rem 0 0 0.5rem;
+    padding: 0.25rem;
+
+    position: relative;
+    float: left;
+
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 500;
+    line-height: calc(var(--size-header) - 1.65rem);
+    
+    border: solid 0.1rem white;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+
+    opacity: 0.5;
+
+    cursor: pointer;
+}
+
+.menu-active {
+    font-weight: 900;
+    opacity: 1;
+}

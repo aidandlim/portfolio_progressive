@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './index.css';
+
 const Search = () => {
 	return (
-		<input className='header-search' placeholder='Search ...' />
+		<input className='search' placeholder='Search ...' />
 	);
 }
 

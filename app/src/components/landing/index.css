@@ -7,3 +7,166 @@
 
     background-color: #0288D1;
 }
+
+.landing-container {
+    width: 17.5rem;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.landing-container > h1 {
+    width: 100%;
+    height: auto;
+
+    margin: 0 0 2rem 0;
+
+    position: relative;
+    float: left;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.landing-form {
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    float: left;
+}
+
+.landing-form > p {
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    float: left;
+
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 900;
+
+    opacity: 0.5;
+}
+
+.landing-form > input {
+    width: 100%;
+    height: 2rem;
+
+    margin: 0 0 1.25rem 0;
+    padding: 0;
+
+    position: relative;
+    float: left;
+
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-indent: 0.25rem;
+
+    background: none;
+    border: none;
+    border-bottom: solid 0.1rem white;
+    box-sizing: border-box;
+    outline: none;
+
+    opacity: 0.5;
+
+    transition: 0.5s;
+}
+
+.landing-form > input:focus {
+    opacity: 1;
+}
+
+.landing-form > button {
+    width: auto;
+    height: auto;
+
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+
+    position: relative;
+    float: right;
+
+    color: var(--color-70);
+    font-size: 0.55rem;
+    font-weight: 900;
+
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none;
+    border-radius: 0.25rem;
+
+    opacity: 0.75;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.landing-navigation {
+    width: 12rem;
+    height: auto;
+
+    margin-top: 2rem;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.landing-status,
+.landing-status-active {
+    width: 4rem;
+    height: auto;
+
+    position: relative;
+    float: left;
+
+    opacity: 0.5;
+
+    cursor: pointer;
+}
+
+.landing-status-active {
+    opacity: 1;
+}
+
+.landing-status-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+
+    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+
+    position: relative;
+    float: left;
+
+    color: white;
+
+    border: solid 0.1rem white;
+    border-radius: 50%;
+}
+
+.landing-status-title {
+    width: 4rem;
+    height: auto;
+
+    position: relative;
+    float: left;
+
+    color: white;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-align: center;
+}

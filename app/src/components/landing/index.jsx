@@ -17,7 +17,7 @@ const Landing = () => {
                 { landingStatus === 0 ? <In /> : null }
                 { landingStatus === 1 ? <Up /> : null }
                 { landingStatus === 2 ? <Fp /> : null }
-                <Nav setLandingStatus={setLandingStatus}/>
+                <Nav landingStatus={landingStatus} setLandingStatus={setLandingStatus}/>
             </div>
         </div>
     );
