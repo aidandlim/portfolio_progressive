@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { ui_nav } from '../../../actions';
+import { ui_nav } from '../../actions';
 
 import { Link } from 'react-router-dom';
 
-import Menu from '../../unit/menu';
-import Mode from '../../unit/mode';
-import Search from '../../unit/search';
+import Menu from './menu';
+import Mode from './mode';
+import Search from './search';
 
 import { FiSettings } from 'react-icons/fi';
 import './index.css';

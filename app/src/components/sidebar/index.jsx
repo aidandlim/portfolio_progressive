@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { ui_nav } from '../../../actions';
+import { ui_nav } from '../../actions';
 
 import { Link } from 'react-router-dom';
 
-import CI from '../../unit/ci';
-import User from '../../unit/user';
+import CI from './ci';
+import User from './user';
 
 import { FiCloud, FiUploadCloud } from 'react-icons/fi';
 

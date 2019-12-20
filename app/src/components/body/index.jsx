@@ -2,16 +2,16 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import All from '../../unit/all';
-import Ongoing from '../../unit/ongoing';
-import Complete from '../../unit/complete';
-import Setting from '../../unit/setting';
+import All from './all';
+import Ongoing from './ongoing';
+import Complete from './complete';
+import Setting from './setting';
 
-import Project from '../../unit/project';
-import Progress from '../../unit/progress';
-import Detail from '../../unit/detail';
+import Project from './project';
+import Progress from './progress';
+import Detail from './detail';
 
-import Error from '../../unit/error';
+import Error from './error';
 
 import './index.css';
 
