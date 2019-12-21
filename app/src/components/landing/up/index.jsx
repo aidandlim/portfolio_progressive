@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { Companies } from '../../pull';
-import { Up as UpPush } from '../../push';
+import { getCompanies, signup } from '../../axios';
 
 const Up = () => {
     const [ companies, setCompanies ] = useState([]);
     
     useEffect(() => {
-        Companies((res) => {
+        getCompanies((res) => {
             setCompanies(res);
         });
     }, []);
@@ -15,7 +14,7 @@ const Up = () => {
     const _handleForm = (event) => {
         event.preventDefault();
 
-        UpPush((res) => {
+        signup((res) => {
             console.log(res);
         });
     }

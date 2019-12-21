@@ -16,6 +16,10 @@ public class User extends Response {
         super();
     }
 
+    public User(long id) {
+        this.id = id;
+    }
+
     public User(long id, String email, String password, String name, long company, String companyName, String department, String position) {
         this.id = id;
         this.email = email;

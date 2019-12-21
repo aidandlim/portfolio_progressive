@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public interface UserDao {
 
     User select(User user);
+    User selectWithEmailAndPassword(User user);
     ArrayList<User> selectAll(Company company);
     void insert(User user);
     void update(User user);

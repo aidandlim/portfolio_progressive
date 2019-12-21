@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { user_data } from '../../actions';
 
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import { check as checkCall } from '../axios';
 
 import Wrapper from 'react-div-100vh';
 
@@ -15,10 +18,17 @@ import './index.css';
 
 const App = () => {
 	const user = useSelector(state => state.user);
+	const dispatch = useDispatch();
 
 	const color = '#01579B';
 	const sizeOfNav = '12.5rem';
 	const sizeOfHeader = '2.5rem';
+
+	useEffect(() => {
+		checkCall((res) => {
+			dispatch(user_data(res));
+		});
+	}, [dispatch]);
 
 	return (
 		<Router>
