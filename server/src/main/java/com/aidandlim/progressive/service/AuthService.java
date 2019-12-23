@@ -67,4 +67,14 @@ public class AuthService {
         }
     }
 
+    @Transactional
+    public void signout(HttpServletRequest request) {
+        try {
+            HttpSession session = request.getSession();
+            session.invalidate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

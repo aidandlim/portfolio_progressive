@@ -32,4 +32,9 @@ public class AuthAPI {
         return service.signup(user);
     }
 
+    @RequestMapping(value = "/api/auth/out", method = RequestMethod.GET)
+    public void signout(HttpServletRequest request) {
+        service.signout(request);
+    }
+
 }

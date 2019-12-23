@@ -4,28 +4,40 @@
 
     <select id="select" resultType="com.aidandlim.progressive.dto.User">
         SELECT
-            `id`,
-            `email`,
-            `name`,
-            `company`,
-            `department`,
-            `position`
+            u.`id`,
+            u.`email`,
+            u.`name`,
+            u.`company`,
+            c.`name` as `companyName`,
+            u.`department`,
+            u.`position`,
+            u.`auth`
         FROM
-            `users`
+            `users` as u
+        LEFT JOIN
+            `companies` as c
+        ON
+            u.`company` = c.`id`
         WHERE
-            `id` = #{id}
+            u.`id` = #{id}
     </select>
 
     <select id="selectWithEmailAndPassword" resultType="com.aidandlim.progressive.dto.User">
-        SELECT
-            `id`,
-            `email`,
-            `name`,
-            `company`,
-            `department`,
-            `position`
+         SELECT
+            u.`id`,
+            u.`email`,
+            u.`name`,
+            u.`company`,
+            c.`name` as `companyName`,
+            u.`department`,
+            u.`position`,
+            u.`auth`
         FROM
-            `users`
+            `users` as u
+        LEFT JOIN
+            `companies` as c
+        ON
+            u.`company` = c.`id`
         WHERE
             `email` = #{email}
             AND
@@ -33,15 +45,21 @@
     </select>
 
     <select id="selectAll" resultType="com.aidandlim.progressive.dto.User">
-        SELECT
-            `id`,
-            `email`,
-            `name`,
-            `company`,
-            `department`,
-            `position`
+         SELECT
+            u.`id`,
+            u.`email`,
+            u.`name`,
+            u.`company`,
+            c.`name` as `companyName`,
+            u.`department`,
+            u.`position`,
+            u.`auth`
         FROM
-            `users`
+            `users` as u
+        LEFT JOIN
+            `companies` as c
+        ON
+            u.`company` = c.`id`
         WHERE
             `company` = #{id}
     </select>

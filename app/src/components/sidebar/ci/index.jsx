@@ -11,9 +11,9 @@ const CI = () => {
 		<div className='ci'>
 			<div className='ci-title'>PROGRESSIVE</div>
 			<div className='ci-auth'>for&nbsp;
-				{ user.auth === 0 ? 'CLIENT' : '' }
-				{ user.auth === 1 ? 'MANAGER' : '' }
-				{ user.auth === 2 ? 'ADMIN' : '' }
+				{ user.data.auth === 0 ? 'CLIENT' : '' }
+				{ user.data.auth === 1 ? 'MANAGER' : '' }
+				{ user.data.auth === 2 ? 'ADMIN' : '' }
 			</div>
 		</div>
 	);

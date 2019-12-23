@@ -10,7 +10,7 @@ const User = () => {
 	return (
 		<div className='user'>
             <div className='user-picture'></div>
-            { user.data.company !== '' ? <div className='user-company'>{user.data.company}</div> : '' }
+            { user.data.companyName !== '' ? <div className='user-company'>{user.data.companyName}</div> : '' }
             { user.data.department !== '' ? <div className='user-department'>{user.data.department}</div> : '' }
             <div className='user-title'>
                 { user.data.position !== '' ? <div className='user-position'>{user.data.position}</div> : '' }

@@ -11,6 +11,7 @@ public class User extends Response {
 
     private String department;
     private String position;
+    private int auth;
 
     public User() {
         super();
@@ -20,7 +21,7 @@ public class User extends Response {
         this.id = id;
     }
 
-    public User(long id, String email, String password, String name, long company, String companyName, String department, String position) {
+    public User(long id, String email, String password, String name, long company, String companyName, String department, String position, int auth) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -29,6 +30,7 @@ public class User extends Response {
         this.companyName = companyName;
         this.department = department;
         this.position = position;
+        this.auth = auth;
     }
 
     public long getId() {
@@ -93,5 +95,13 @@ public class User extends Response {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public int getAuth() {
+        return auth;
+    }
+
+    public void setAuth(int auth) {
+        this.auth = auth;
     }
 }

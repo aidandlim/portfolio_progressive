@@ -20,7 +20,7 @@ const Sidebar = () => {
 		<div className='sidebar'>
 			<CI />
 			<User />
-			{user.auth > 0 ? 
+			{user.data.auth > 0 ? 
 				<Link className='sidebar-container' to='/project' onClick={ () => dispatch(ui_nav(10)) }>
 					<FiCloud className='sidebar-icon' />
 					<div className='sidebar-title'>새 프로젝트 생성</div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { user_data } from '../../../actions';
 
-import { signin } from '../../axios';
+import { signin, check } from '../../axios';
 
 const In = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,13 @@ const In = () => {
         event.preventDefault();
 
         signin((res) => {
-            dispatch(user_data(res));
+            if(res.status === 7) {
+                check((res) => {
+                    dispatch(user_data(res));
+                });
+            } else {
+                alert('회원정보가 올바르지 않습니다.');
+            }
         });
     }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getCompanies, signup } from '../../axios';
 
-const Up = () => {
+const Up = ({ setLandingStatus }) => {
     const [ companies, setCompanies ] = useState([]);
     
     useEffect(() => {
@@ -15,7 +15,12 @@ const Up = () => {
         event.preventDefault();
 
         signup((res) => {
-            console.log(res);
+            if(res.status === 7) {
+                alert('회원가입이 완료되었습니다.');
+                setLandingStatus(0);
+            } else {
+                alert('해당 이메일로 회원 정보가 이미 존재합니다.');
+            }
         });
     }
 

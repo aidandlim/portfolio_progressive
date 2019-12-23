@@ -5,7 +5,7 @@ import { user_data } from '../../actions';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { check as checkCall } from '../axios';
+import { check } from '../axios';
 
 import Wrapper from 'react-div-100vh';
 
@@ -25,7 +25,7 @@ const App = () => {
 	const sizeOfHeader = '2.5rem';
 
 	useEffect(() => {
-		checkCall((res) => {
+		check((res) => {
 			dispatch(user_data(res));
 		});
 	}, [dispatch]);

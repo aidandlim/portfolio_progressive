@@ -41,3 +41,10 @@ export const getCompanies = (callback) => {
         callback(res.data);
     });
 }
+
+export const signout = (callback) => {
+    Axios.get('/auth/out')
+    .then(() => {
+        callback();
+    });
+}

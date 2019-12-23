@@ -15,7 +15,7 @@ const Landing = () => {
             <div className='landing-container'>
                 <h1>#PROGRESSIVE</h1>
                 { landingStatus === 0 ? <In /> : null }
-                { landingStatus === 1 ? <Up /> : null }
+                { landingStatus === 1 ? <Up setLandingStatus={setLandingStatus}/> : null }
                 { landingStatus === 2 ? <Fp /> : null }
                 <Nav landingStatus={landingStatus} setLandingStatus={setLandingStatus}/>
             </div>
