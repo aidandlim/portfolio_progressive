@@ -85,6 +85,7 @@ const Project = () => {
 	return (
 		<div className='project'>
 			<div className='body-header'>새로운 프로젝트 생성</div>
+			<div className='body-description'>프로젝트 정보를 입력하여 새로운 프로젝트를 생성합니다. * 가 표시된 항목은 필수 입력 사항입니다.</div>
 			<Form formData={formData} />
 		</div>
 	);
