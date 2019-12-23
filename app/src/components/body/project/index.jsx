@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { getUsers } from '../../axios';
 
 import Form from '../form';
 
 import './index.css';
 
 const Project = () => {
+	const [ users, setUsers ] = useState([]);
+
+	useEffect(() => {
+		getUsers((res) => {
+			setUsers(res);
+		});
+	}, []);
 	
 	const _handleForm = (event) => {
 		event.preventDefault();
@@ -61,12 +70,14 @@ const Project = () => {
 				type: 'people',
 				name: 'manager',
 				isRequired: false,
+				users: users,
 			},
 			{
 				title: '담당자',
 				type: 'people',
 				name: 'client',
 				isRequired: false,
+				users: users,
 			},
 		]
 	}

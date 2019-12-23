@@ -18,7 +18,9 @@ const Input = ({ element }) => {
             { element.type === 'textarea' ? <textarea className='body-form-textarea' name={element.name}></textarea> : null }
             { element.type === 'people' ? 
                 <div>
-                    people list
+                    { element.users.map((user, index) => 
+                        <div key={index}>{user.name}</div>    
+                    )}
                 </div>
             : null }
         </label>

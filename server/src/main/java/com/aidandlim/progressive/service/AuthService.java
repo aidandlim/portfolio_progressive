@@ -47,6 +47,7 @@ public class AuthService {
             } else {
                 HttpSession session = request.getSession();
                 session.setAttribute("userId", result.getId());
+                session.setAttribute("companyId", result.getCompany());
                 return new Response(7);
             }
         } catch (Exception e) {

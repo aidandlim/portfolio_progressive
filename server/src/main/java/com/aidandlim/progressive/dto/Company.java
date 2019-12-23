@@ -8,6 +8,10 @@ public class Company extends Response {
         super();
     }
 
+    public Company(long id) {
+        this.id = id;
+    }
+
     public Company(long id, String name) {
         this.id = id;
         this.name = name;

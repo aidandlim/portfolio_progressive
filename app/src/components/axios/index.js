@@ -42,6 +42,13 @@ export const getCompanies = (callback) => {
     });
 }
 
+export const getUsers = (callback) => {
+    Axios.get('/users')
+    .then((res) => {
+        callback(res.data);
+    });
+}
+
 export const signout = (callback) => {
     Axios.get('/auth/out')
     .then(() => {
