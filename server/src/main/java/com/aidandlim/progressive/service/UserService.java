@@ -1,6 +1,5 @@
 package com.aidandlim.progressive.service;
 
-import com.aidandlim.progressive.dao.CompanyDao;
 import com.aidandlim.progressive.dao.UserDao;
 import com.aidandlim.progressive.dto.Company;
 import com.aidandlim.progressive.dto.User;
