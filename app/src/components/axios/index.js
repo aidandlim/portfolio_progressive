@@ -4,6 +4,9 @@ export const check = (callback) => {
     Axios.get('/auth')
     .then((res) => {
         callback(res.data);
+    })
+    .catch(() => {
+        callback(0);
     });
 }
 
@@ -35,6 +38,13 @@ export const signup = (callback) => {
     });
 }
 
+export const signout = (callback) => {
+    Axios.get('/auth/out')
+    .then(() => {
+        callback();
+    });
+}
+
 export const getCompanies = (callback) => {
     Axios.get('/companies')
     .then((res) => {
@@ -49,9 +59,3 @@ export const getUsers = (callback) => {
     });
 }
 
-export const signout = (callback) => {
-    Axios.get('/auth/out')
-    .then(() => {
-        callback();
-    });
-}

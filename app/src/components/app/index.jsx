@@ -26,7 +26,11 @@ const App = () => {
 
 	useEffect(() => {
 		check((res) => {
-			dispatch(user_data(res));
+			if(res === 0) {
+				alert('서버가 구동되고 있지 않습니다. 잠시 후 다시 시도해주십시오.');
+			} else {
+				dispatch(user_data(res));
+			}
 		});
 	}, [dispatch]);
 
