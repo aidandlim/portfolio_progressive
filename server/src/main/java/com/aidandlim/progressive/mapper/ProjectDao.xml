@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aidandlim.progressive.dao.CompanyDao">
+
+    <select id="select" resultType="com.aidandlim.progressive.dto.Project">
+        SELECT
+            `id`,
+            `code`,
+            `name`,
+            `company`,
+            `info1`,
+            `info2`,
+            `info3`,
+            `info4`,
+            `info5`,
+            `isCompleted`
+        FROM
+            `projects`
+        WHERE
+            `id` = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.aidandlim.progressive.dto.Project">
+        SELECT
+            `id`,
+            `code`,
+            `name`,
+            `company`,
+            `info1`,
+            `info2`,
+            `info3`,
+            `info4`,
+            `info5`,
+            `isCompleted`
+        FROM
+            `projects`
+        WHERE
+            `company` = #{company}
+            AND
+            `isCompleted` = #{isCompleted}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO `projects`
+            (`code`, `name`, `company`, `info1`, `info2`, `info3`, `info4`, `info5`)
+        VALUES
+            (#{code}, #{name}, #{company}, #{info1}, #{info2}, #{info3}, #{info4}, #{info5})
+    </insert>
+
+    <update id="update">
+        UPDATE
+            `projects`
+        SET
+            `code` = #{code},
+            `name` = #{name},
+            `info1` = #{info1},
+            `info2` = #{info2},
+            `info3` = #{info3},
+            `info4` = #{info4},
+            `info5` = #{info5}
+        WHERE
+            `id` = #{id}
+    </update>
+
+    <update id="updateIsCompleted">
+        UPDATE
+            `projects`
+        SET
+            `isCompleted` = IF(`isCompleted` = 0, 1, 0)
+        WHERE
+            `id` = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM
+            `projects`
+        WHERE
+            `id` = #{id}
+    </delete>
+
+</mapper>

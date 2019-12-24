@@ -2,18 +2,18 @@ package com.aidandlim.progressive.dto;
 
 public class Contributor extends Response {
     private long id;
-    private long projectId;
-    private long userId;
+    private long project;
+    private long user;
     private int type;
 
     public Contributor() {
         super();
     }
 
-    public Contributor(long id, long projectId, long userId, int type) {
+    public Contributor(long id, long project, long user, int type) {
         this.id = id;
-        this.projectId = projectId;
-        this.userId = userId;
+        this.project = project;
+        this.user = user;
         this.type = type;
     }
 
@@ -25,20 +25,20 @@ public class Contributor extends Response {
         this.id = id;
     }
 
-    public long getProjectId() {
-        return projectId;
+    public long getProject() {
+        return project;
     }
 
-    public void setProjectId(long projectId) {
-        this.projectId = projectId;
+    public void setProject(long project) {
+        this.project = project;
     }
 
-    public long getUserId() {
-        return userId;
+    public long getUser() {
+        return user;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser(long user) {
+        this.user = user;
     }
 
     public int getType() {
