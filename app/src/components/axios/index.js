@@ -67,6 +67,24 @@ export const getUsers = (callback) => {
 
 /******************************************** PROJECTS ********************************************/
 
+export const getProject = (callback) => {
+    Axios.get('/project')
+    .then((res) => {
+        callback(res.data);
+    });
+}
+
+export const getProjects = (type, callback) => {
+    const data = {
+        isCompleted: type
+    }
+
+    Axios.get('/projects', { params: data })
+    .then((res) => {
+        callback(res.data);
+    });
+}
+
 export const postProject = (callback) => {
 
     let managers = [];

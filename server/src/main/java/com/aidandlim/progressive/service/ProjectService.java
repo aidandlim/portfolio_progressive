@@ -38,8 +38,13 @@ public class ProjectService {
     }
 
     @Transactional
-    public ArrayList<Project> getProjects(Project project) {
+    public ArrayList<Project> getProjects(HttpServletRequest request, int isCompleted) {
         try {
+            HttpSession session = request.getSession();
+            Project project = new Project();
+            project.setCompany((Long) session.getAttribute("companyId"));
+            project.setIsCompleted(isCompleted);
+
             projectDao = sqlSession.getMapper(ProjectDao.class);
             ArrayList<Project> result = projectDao.selectAll(project);
             return result;

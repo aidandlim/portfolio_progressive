@@ -4,10 +4,7 @@ import com.aidandlim.progressive.dto.Project;
 import com.aidandlim.progressive.dto.Response;
 import com.aidandlim.progressive.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -24,8 +21,8 @@ public class ProjectAPI {
     }
 
     @RequestMapping(value = "/api/projects", method = RequestMethod.GET)
-    public ArrayList<Project> getProjects(HttpServletRequest request, @RequestBody Project project) {
-        return service.getProjects(project);
+    public ArrayList<Project> getProjects(HttpServletRequest request, @RequestParam("isCompleted") int isCompleted) {
+        return service.getProjects(request, isCompleted);
     }
 
     @RequestMapping(value = "/api/project", method = RequestMethod.POST)
