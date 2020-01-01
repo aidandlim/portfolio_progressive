@@ -1,5 +1,7 @@
 import Axios from 'axios';
 
+/******************************************** AUTH ********************************************/
+
 export const check = (callback) => {
     Axios.get('/auth')
     .then((res) => {
@@ -45,12 +47,16 @@ export const signout = (callback) => {
     });
 }
 
+/******************************************** COMPANIES ********************************************/
+
 export const getCompanies = (callback) => {
     Axios.get('/companies')
     .then((res) => {
         callback(res.data);
     });
 }
+
+/******************************************** USERS ********************************************/
 
 export const getUsers = (callback) => {
     Axios.get('/users')
@@ -59,3 +65,39 @@ export const getUsers = (callback) => {
     });
 }
 
+/******************************************** PROJECTS ********************************************/
+
+export const postProject = (callback) => {
+
+    let managers = [];
+    let getManagers = document.project.manager;
+
+    for (let i = 0; i < getManagers.length; i++) {
+        if(getManagers[i].checked)
+            managers.push({ id: getManagers[i].value });
+    }
+
+    let clients = [];
+    let getClients = document.project.client;
+
+    for (let i = 0; i < getClients.length; i++) {
+        if(getClients[i].checked)
+            clients.push({ id: getManagers[i].value });
+    }
+
+    const data = {
+        code: document.project.code.value,
+        name: document.project.name.value,
+        info1: document.project.info1.value,
+        info2: document.project.info2.value,
+        info3: document.project.info3.value,
+        info4: document.project.info4.value,
+        managers: managers,
+        clients: clients,
+    }
+
+    Axios.post('/project', data)
+    .then((res) => {
+        callback(res.data);
+    });
+}

@@ -40,7 +40,7 @@
             `isCompleted` = #{isCompleted}
     </select>
 
-    <insert id="insert">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.aidandlim.progressive.dto.Project">
         INSERT INTO `projects`
             (`code`, `name`, `company`, `info1`, `info2`, `info3`, `info4`, `info5`)
         VALUES

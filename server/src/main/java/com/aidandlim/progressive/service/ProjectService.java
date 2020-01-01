@@ -1,5 +1,6 @@
 package com.aidandlim.progressive.service;
 
+import com.aidandlim.progressive.dao.ContributorDao;
 import com.aidandlim.progressive.dao.ProjectDao;
 import com.aidandlim.progressive.dto.Project;
 import com.aidandlim.progressive.dto.Response;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 @Service
@@ -18,6 +21,9 @@ public class ProjectService {
 
     @Autowired
     ProjectDao projectDao;
+
+    @Autowired
+    ContributorDao contributorDao;
 
     @Transactional
     public Project getProject(Project project) {
@@ -44,10 +50,22 @@ public class ProjectService {
     }
 
     @Transactional
-    public Response postProject(Project project) {
+    public Response postProject(HttpServletRequest request, Project project) {
         try {
+            HttpSession session = request.getSession();
+            project.setCompany((Long) session.getAttribute("companyId"));
+
             projectDao = sqlSession.getMapper(ProjectDao.class);
             projectDao.insert(project);
+
+            contributorDao = sqlSession.getMapper(ContributorDao.class);
+            for(int i = 0; i < project.getManagers().size(); i++) {
+                contributorDao.insert(project.getId(), project.getManagers().get(i).getId(), 0);
+            }
+            for(int i = 0; i < project.getClients().size(); i++) {
+                contributorDao.insert(project.getId(), project.getClients().get(i).getId(), 1);
+            }
+
             return new Response(7);
         } catch (Exception e) {
             e.printStackTrace();

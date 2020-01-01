@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getUsers } from '../../axios';
+import { getUsers, postProject } from '../../axios';
 
 import Form from '../form';
 
@@ -17,6 +17,14 @@ const Project = () => {
 	
 	const _handleForm = (event) => {
 		event.preventDefault();
+		postProject((res) => {
+			if(res.status === 7) {
+				alert('프로젝트 등록 완료!');
+				window.location.href = '/project';
+			} else {
+				alert('프로젝트 등록 실패!');
+			}
+		});
 	}
 
 	const formData = {

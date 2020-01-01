@@ -30,7 +30,7 @@ public class ProjectAPI {
 
     @RequestMapping(value = "/api/project", method = RequestMethod.POST)
     public Response postProject(HttpServletRequest request, @RequestBody Project project) {
-        return service.postProject(project);
+        return service.postProject(request, project);
     }
 
     @RequestMapping(value = "/api/project", method = RequestMethod.PUT)

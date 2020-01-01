@@ -1,5 +1,7 @@
 package com.aidandlim.progressive.dto;
 
+import java.util.ArrayList;
+
 public class Project extends Response {
     private long id;
     private String code;
@@ -12,11 +14,14 @@ public class Project extends Response {
     private String info5;
     private int isCompleted;
 
+    private ArrayList<User> managers;
+    private ArrayList<User> clients;
+
     public Project() {
         super();
     }
 
-    public Project(long id, String code, String name, long company, String info1, String info2, String info3, String info4, String info5, int isCompleted) {
+    public Project(long id, String code, String name, long company, String info1, String info2, String info3, String info4, String info5, int isCompleted, ArrayList<User> managers, ArrayList<User> clients) {
         this.id = id;
         this.code = code;
         this.name = name;
@@ -27,6 +32,8 @@ public class Project extends Response {
         this.info4 = info4;
         this.info5 = info5;
         this.isCompleted = isCompleted;
+        this.managers = managers;
+        this.clients = clients;
     }
 
     public long getId() {
@@ -107,5 +114,21 @@ public class Project extends Response {
 
     public void setIsCompleted(int isCompleted) {
         this.isCompleted = isCompleted;
+    }
+
+    public ArrayList<User> getManagers() {
+        return managers;
+    }
+
+    public void setManagers(ArrayList<User> managers) {
+        this.managers = managers;
+    }
+
+    public ArrayList<User> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<User> clients) {
+        this.clients = clients;
     }
 }
