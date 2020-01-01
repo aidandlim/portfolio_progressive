@@ -1,16 +1,56 @@
 package com.aidandlim.progressive.api;
 
+import com.aidandlim.progressive.dto.Project;
+import com.aidandlim.progressive.dto.Response;
+import com.aidandlim.progressive.service.ProjectService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 @RestController
 public class ProjectAPI {
 
-//    @Autowired
-//    UserService service;
-//
-//    @RequestMapping(value = "/api/users", method = RequestMethod.GET)
-//    public ArrayList<User> getUsers(HttpServletRequest request) {
-//        return service.getUsers(request);
-//    }
+    @Autowired
+    ProjectService service;
+
+    @RequestMapping(value = "/api/project", method = RequestMethod.GET)
+    public Project getProject(HttpServletRequest request, @RequestBody Project project) {
+        return service.getProject(project);
+    }
+
+    @RequestMapping(value = "/api/projects", method = RequestMethod.GET)
+    public ArrayList<Project> getProjects(HttpServletRequest request, @RequestBody Project project) {
+        return service.getProjects(project);
+    }
+
+    @RequestMapping(value = "/api/project", method = RequestMethod.POST)
+    public Response postProject(HttpServletRequest request, @RequestBody Project project) {
+        return service.postProject(project);
+    }
+
+    @RequestMapping(value = "/api/project", method = RequestMethod.PUT)
+    public Response putProject(HttpServletRequest request, @RequestBody Project project) {
+        return service.putProject(project);
+    }
+
+    @RequestMapping(value = "/api/project/isCompleted", method = RequestMethod.PUT)
+    public Response putProjectIsCompleted(HttpServletRequest request, @RequestBody Project project) {
+        return service.putProjectIsCompleted(project);
+    }
+
+    @RequestMapping(value = "/api/project", method = RequestMethod.DELETE)
+    public Response deleteProject(HttpServletRequest request, @RequestBody Project project) {
+        return service.deleteProject(project);
+    }
+
+    @RequestMapping(value = "/api/projects", method = RequestMethod.DELETE)
+    public Response deleteProjects(HttpServletRequest request, @RequestBody ArrayList<Project> project) {
+        return service.deleteProjects(project);
+    }
 
 }

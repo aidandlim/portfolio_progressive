@@ -1,16 +1,17 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { ui_isCardMode } from '../../../actions';
+import { useSelector, /* useDispatch */ } from 'react-redux';
+// import { ui_isCardMode } from '../../../actions';
 
 import './index.css';
 
 const Mode = () => {
     const ui = useSelector(state => state.ui);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const _handleCardMode = () => {
-		dispatch(ui_isCardMode(!ui.isCardMode));
+        alert('데모 버전에 포함되지 않은 기능입니다.');
+		// dispatch(ui_isCardMode(!ui.isCardMode));
     }
     
     return (
