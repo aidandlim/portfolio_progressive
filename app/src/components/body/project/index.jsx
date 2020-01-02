@@ -47,7 +47,7 @@ const Project = ({ history }) => {
 				title: '프로젝트 정보 (문자형)',
 				type: 'text',
 				name: 'info1',
-				isRequired: true,
+				isRequired: false,
 			},
 			{
 				title: '프로젝트 정보 (숫자형)',

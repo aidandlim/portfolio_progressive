@@ -2,6 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aidandlim.progressive.dao.ContributorDao">
 
+    <select id="selectAll" resultType="com.aidandlim.progressive.dto.User">
+        SELECT
+            u.`id`,
+            u.`name`
+        FROM
+            `contributors` as c
+        LEFT JOIN
+            `users` as u
+        ON
+            c.user = u.id
+        WHERE
+            c.project = #{project}
+            AND
+            c.type = #{type}
+    </select>
+
     <insert id="insert">
         INSERT INTO `contributors`
             (`project`, `user`, `type`)

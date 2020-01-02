@@ -47,6 +47,12 @@ public class ProjectService {
 
             projectDao = sqlSession.getMapper(ProjectDao.class);
             ArrayList<Project> result = projectDao.selectAll(project);
+
+            contributorDao = sqlSession.getMapper(ContributorDao.class);
+            for(int i = 0; i < result.size(); i++) {
+                result.get(i).setManagers(contributorDao.selectAll(result.get(i).getId(), 0));
+                result.get(i).setClients(contributorDao.selectAll(result.get(i).getId(), 1));
+            }
             return result;
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
+import UserImage from '../../../resources/user.png';
 import './index.css';
 
 const User = () => {
@@ -9,7 +10,9 @@ const User = () => {
 
 	return (
 		<div className='user'>
-            <div className='user-picture'></div>
+            <div className='user-picture' style={{
+                backgroundImage: `url('${UserImage}')`
+            }}></div>
             { user.data.companyName !== '' ? <div className='user-company'>{user.data.companyName}</div> : '' }
             { user.data.department !== '' ? <div className='user-department'>{user.data.department}</div> : '' }
             <div className='user-title'>
