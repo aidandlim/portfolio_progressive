@@ -8,7 +8,7 @@ const Form = ({ formData }) => {
             { formData.elements.map((element, index) => 
                 <Input key={index} element={element} />
             )}
-            <button className='body-form-submit' type='submit'>저 장</button>
+            { formData.onSubmit !== undefined ? <button className='body-form-submit' type='submit'>저 장</button> : null }
         </form>
     );
 }

@@ -67,10 +67,17 @@ export const getUsers = (callback) => {
 
 /******************************************** PROJECTS ********************************************/
 
-export const getProject = (callback) => {
-    Axios.get('/project')
+export const getProject = (id, callback) => {
+    const data = {
+        project: id
+    }
+
+    Axios.get('/project', { params: data })
     .then((res) => {
-        callback(res.data);
+        if(res.data === null)
+            callback({});
+        else
+            callback(res.data);
     });
 }
 
@@ -113,6 +120,7 @@ export const postProject = (callback) => {
         info2: document.project.info2.value,
         info3: document.project.info3.value,
         info4: document.project.info4.value,
+        info5: document.project.info5.value,
         managers: managers,
         clients: clients,
     }
