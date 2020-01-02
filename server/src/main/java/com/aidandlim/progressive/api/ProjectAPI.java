@@ -41,8 +41,8 @@ public class ProjectAPI {
     }
 
     @RequestMapping(value = "/api/project", method = RequestMethod.DELETE)
-    public Response deleteProject(HttpServletRequest request, @RequestBody Project project) {
-        return service.deleteProject(project);
+    public Response deleteProject(HttpServletRequest request, @RequestParam("id") long id) {
+        return service.deleteProject(id);
     }
 
     @RequestMapping(value = "/api/projects", method = RequestMethod.DELETE)

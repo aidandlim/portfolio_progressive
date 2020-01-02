@@ -45,6 +45,8 @@ const Header = () => {
 			dispatch(ui_nav(11));
 		else if(currentLocation === '/detail')
 			dispatch(ui_nav(12));
+		else if(currentLocation === '/modify')
+			dispatch(ui_nav(13));
 		else if(currentLocation === '/setting')
 			dispatch(ui_nav(99));
 		else

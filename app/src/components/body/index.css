@@ -199,3 +199,111 @@
     cursor: pointer;
     outline: none;
 }
+
+.body-table {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 1rem;
+
+    position: relative;
+    float: left;
+}
+
+.body-table-header,
+.body-table-body {
+    width: 100%;
+    height: 1.5rem;
+
+    position: relative;
+    float: left;
+
+    color: #505050;
+    font-size: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.body-table-header {
+    background-color: var(--color-20);
+}
+
+.body-table-body {
+    background-color: var(--color-10);
+    transition: 0.25s;
+
+    cursor: pointer;
+}
+
+.body-table-body:hover {
+    background-color: var(--color-15);
+}
+
+.body-table-header > div,
+.body-table-body > div {
+    height: 100%;
+
+    position: relative;
+    float: left;
+
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.body-table-header > div {
+    color: var(--color-90);
+    font-size: 0.5rem;
+    font-weight: 900;
+}
+
+.body-table-body > div {
+    color: #505050;
+    font-size: 0.45rem;
+    font-weight: 700;
+}
+
+.body-table-button-container {
+    width: auto;
+    height: 1rem;
+
+    margin: 0.25rem 0;
+
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.body-table-button-detail,
+.body-table-button-modify,
+.body-table-button-delete {
+    width: auto;
+    height: 1rem;
+
+    margin: 0 0.15rem;
+    padding: 0 0.25rem;
+
+    position: relative;
+    float: left;
+
+    color: #FFFFFFBF;
+    font-size: 0.5rem;
+    font-weight: 900;
+    text-decoration: none;
+    line-height: 1rem;
+
+    border-radius: 0.25rem;
+}
+
+.body-table-button-detail {
+    background-color: #009688;
+}
+
+.body-table-button-modify {
+    background-color: #FF9800;
+}
+
+.body-table-button-delete {
+    background-color: #F44336;
+}

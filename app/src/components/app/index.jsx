@@ -50,6 +50,7 @@ const App = () => {
 						--color-40: ${color + '66'};
 						--color-30: ${color + '4d'};
 						--color-20: ${color + '33'};
+						--color-15: ${color + '26'};
 						--color-10: ${color + '1a'};
 					}
 				`}</style>

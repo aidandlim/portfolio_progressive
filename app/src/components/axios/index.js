@@ -81,7 +81,10 @@ export const getProjects = (type, callback) => {
 
     Axios.get('/projects', { params: data })
     .then((res) => {
-        callback(res.data);
+        if(res.data === null)
+            callback([]);
+        else
+            callback(res.data);
     });
 }
 
@@ -115,6 +118,17 @@ export const postProject = (callback) => {
     }
 
     Axios.post('/project', data)
+    .then((res) => {
+        callback(res.data);
+    });
+}
+
+export const deleteProject = (id, callback) => {
+    const data ={
+        id: id
+    }
+
+    Axios.delete('/project', {params: data})
     .then((res) => {
         callback(res.data);
     });

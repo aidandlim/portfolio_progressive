@@ -6,7 +6,7 @@ import Form from '../form';
 
 import './index.css';
 
-const Project = () => {
+const Project = ({ history }) => {
 	const [ users, setUsers ] = useState([]);
 
 	useEffect(() => {
@@ -20,7 +20,7 @@ const Project = () => {
 		postProject((res) => {
 			if(res.status === 7) {
 				alert('프로젝트 등록 완료!');
-				window.location.href = '/project';
+				history.push('/');
 			} else {
 				alert('프로젝트 등록 실패!');
 			}

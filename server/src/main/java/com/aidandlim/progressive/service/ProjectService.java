@@ -103,8 +103,11 @@ public class ProjectService {
     }
 
     @Transactional
-    public Response deleteProject(Project project) {
+    public Response deleteProject(long id) {
         try {
+            Project project = new Project();
+            project.setId(id);
+
             projectDao = sqlSession.getMapper(ProjectDao.class);
             projectDao.delete(project);
             return new Response(7);
