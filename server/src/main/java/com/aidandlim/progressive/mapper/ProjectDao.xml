@@ -17,7 +17,7 @@
         FROM
             `projects`
         WHERE
-            `id` = #{id}
+            `id` = #{project}
     </select>
 
     <select id="selectAll" resultType="com.aidandlim.progressive.dto.Project">
@@ -38,6 +38,23 @@
             `company` = #{company}
             AND
             `isCompleted` = #{isCompleted}
+    </select>
+
+    <select id="selectAllByUserId" resultType="com.aidandlim.progressive.dto.Project">
+        SELECT
+            p.`id`,
+            p.`code`,
+            p.`name`
+        FROM
+            `contributors` as c
+        LEFT JOIN
+            `projects` as p
+        ON
+            c.project = p.id
+        WHERE
+            c.`user` = #{user}
+            AND
+            c.`type` = #{type}
     </select>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.aidandlim.progressive.dto.Project">

@@ -2,22 +2,26 @@ import React, { useState, useEffect } from 'react';
 
 import queryString from 'query-string';
 
-import { getProject } from '../../axios';
+import { getProject, getProgresses } from '../../axios';
 
 import Form from '../form';
 
 import './index.css';
 
 const Detail = ({ location }) => {
+	const { pid } = queryString.parse(location.search);
 	const [ project, setProject ] = useState({});
+	const [ progresses, setProgresses ] = useState([]);
 
 	useEffect(() => {
-		const { pid } = queryString.parse(location.search);
 		if (pid !== undefined)
 			getProject(pid, (res) => {
 				setProject(res);
 			});
-	}, [location.search]);
+			getProgresses(pid, (res) => {
+				setProgresses(res);
+			});
+	}, [pid]);
 
 	const formData = {
 		name: 'project',
@@ -104,6 +108,15 @@ const Detail = ({ location }) => {
 			<Form formData={formData} />
 			<div className='body-header'>진행상황 조회</div>
 			<div className='body-description'>해당 프로젝트의 모든 진행상황 정보를 조회합니다.</div>
+			{
+				progresses.map((progress, index) => (
+					progress.type === 0 
+					? 
+					<div key={index}>{progress.content}</div>
+					:
+					<div key={index}>{progress.content}</div>
+				)
+			)}
 		</div>
 	);
 }

@@ -95,6 +95,20 @@ export const getProjects = (type, callback) => {
     });
 }
 
+export const getProjectsByUserId = (type, callback) => {
+    const data = {
+        type: type
+    }
+
+    Axios.get('/projects/userId', { params: data })
+    .then((res) => {
+        if(res.data === null)
+            callback([]);
+        else
+            callback(res.data);
+    });
+}
+
 export const postProject = (callback) => {
 
     let managers = [];
@@ -137,6 +151,35 @@ export const deleteProject = (id, callback) => {
     }
 
     Axios.delete('/project', {params: data})
+    .then((res) => {
+        callback(res.data);
+    });
+}
+
+/******************************************** PROGRESS ********************************************/
+
+export const getProgresses = (project, callback) => {
+    const data = {
+        project: project
+    }
+
+    Axios.get('/progresses', { params: data })
+    .then((res) => {
+        if(res.data === null)
+            callback({});
+        else
+            callback(res.data);
+    });
+}
+
+export const postProgress = (type, callback) => {
+    const data = {
+        project: document.progress.project.value,
+        content: document.progress.content.value,
+        type: type
+    }
+
+    Axios.post('/progress', data)
     .then((res) => {
         callback(res.data);
     });

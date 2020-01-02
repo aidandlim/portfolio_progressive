@@ -16,13 +16,18 @@ public class ProjectAPI {
     ProjectService service;
 
     @RequestMapping(value = "/api/project", method = RequestMethod.GET)
-    public Project getProject(HttpServletRequest request, @RequestBody Project project) {
+    public Project getProject(HttpServletRequest request, @RequestParam("project") long project) {
         return service.getProject(project);
     }
 
     @RequestMapping(value = "/api/projects", method = RequestMethod.GET)
     public ArrayList<Project> getProjects(HttpServletRequest request, @RequestParam("isCompleted") int isCompleted) {
         return service.getProjects(request, isCompleted);
+    }
+
+    @RequestMapping(value = "/api/projects/userId", method = RequestMethod.GET)
+    public ArrayList<Project> getProjectsByUserId(HttpServletRequest request, @RequestParam("type") int type) {
+        return service.getProjectsByUserId(request, type);
     }
 
     @RequestMapping(value = "/api/project", method = RequestMethod.POST)

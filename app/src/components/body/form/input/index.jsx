@@ -6,6 +6,8 @@ const Input = ({ element }) => {
 
     if(inputList.indexOf(element.type) > -1) {
         className = 'body-form-label';
+    } else if(element.type === 'select') {
+        className = 'body-form-label';
     } else if(element.type === 'textarea') {
         className = 'body-form-label-wide';
     } else if(element.type === 'people') {
@@ -31,6 +33,13 @@ const Input = ({ element }) => {
             <p className='body-form-title'>{element.title} {element.isRequired ? '*' : null}</p>
             { inputList.indexOf(element.type) > -1 ? <input className='body-form-input' type={element.type} name={element.name} required={element.isRequired ? 'required' : ''} defaultValue={element.value} disabled={element.isDetail ? 'disabled' : ''} /> : null }
             { element.type === 'textarea' ? <textarea className='body-form-textarea' name={element.name} defaultValue={element.value} disabled={element.isDetail ? 'disabled' : ''}></textarea> : null }
+            { element.type === 'select' ? 
+                <select className='body-form-input' name={element.name}>
+                    {element.projects.map((project, index) =>
+                        <option value={project.id} key={index}>{project.name}({project.code})</option>    
+                    )}
+                </select> 
+            : null }
         </label>
     );
 }

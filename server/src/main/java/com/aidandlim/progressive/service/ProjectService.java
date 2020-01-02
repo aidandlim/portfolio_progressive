@@ -26,10 +26,15 @@ public class ProjectService {
     ContributorDao contributorDao;
 
     @Transactional
-    public Project getProject(Project project) {
+    public Project getProject(long project) {
         try {
             projectDao = sqlSession.getMapper(ProjectDao.class);
             Project result = projectDao.select(project);
+
+            contributorDao = sqlSession.getMapper(ContributorDao.class);
+            result.setManagers(contributorDao.selectAll(project, 0));
+            result.setClients(contributorDao.selectAll(project, 1));
+
             return result;
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,6 +58,23 @@ public class ProjectService {
                 result.get(i).setManagers(contributorDao.selectAll(result.get(i).getId(), 0));
                 result.get(i).setClients(contributorDao.selectAll(result.get(i).getId(), 1));
             }
+
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Transactional
+    public ArrayList<Project> getProjectsByUserId(HttpServletRequest request, int type) {
+        try {
+            HttpSession session = request.getSession();
+            long user = (Long) session.getAttribute("userId");
+
+            projectDao = sqlSession.getMapper(ProjectDao.class);
+            ArrayList<Project> result = projectDao.selectAllByUserId(user, type);
+
             return result;
         } catch (Exception e) {
             e.printStackTrace();

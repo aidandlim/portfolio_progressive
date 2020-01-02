@@ -66,7 +66,7 @@ const Table = ({ projects, setProjects }) => {
                         <div style={{ width: '25%' }}>
                             <div className='body-table-button-container'>
                                 <Link onClick={_handleDetail} to={`/detail?pid=${project.id}`}><FiSearch className='body-table-button-detail'/></Link>
-                                <Link onClick={_handleModify} to={`/modify?pid=${project.id}`}><FiEdit3 className='body-table-button-modify'/></Link>
+                                <FiEdit3 className='body-table-button-modify' onClick={ () => _handleModify(project.id) } />
                                 <FiTrash2 className='body-table-button-delete' onClick={ () => _handleDelete(project.id) } />
                             </div>
                         </div>

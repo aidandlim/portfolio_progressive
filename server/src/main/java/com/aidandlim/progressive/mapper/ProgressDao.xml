@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aidandlim.progressive.dao.ProgressDao">
+
+    <select id="selectAll" resultType="com.aidandlim.progressive.dto.Progress">
+        SELECT
+            g.`id`,
+            g.`project`,
+            p.`code` as `projectCode`,
+            p.`name` as `projectName`,
+            g.`user`,
+            u.`name` as `userName`,
+            g.`content`,
+            g.`time`,
+            g.`type`
+        FROM
+            `progresses` as g
+        LEFT JOIN
+            `projects` as p
+        ON
+            g.project = p.id
+        LEFT JOIN
+            `users` as u
+        ON
+            g.user = u.id
+        WHERE
+            g.project = #{project}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO `progresses`
+            (`project`, `user`, `content`, `type`)
+        VALUES
+            (#{project}, #{user}, #{content}, #{type})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM
+            `progresses`
+        WHERE
+            `id` = #{id}
+    </delete>
+
+</mapper>
